@@ -6,9 +6,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(rupture2d 
     src/placeholder.cpp
+    src/Logger.cpp
 )
 
 target_include_directories(rupture2d PUBLIC include)
+target_compile_definitions(rupture2d PUBLIC RUPTURE_DEBUG)
 
 add_executable(demo demos/main.cpp)
 target_link_libraries(demo PRIVATE rupture2d)
