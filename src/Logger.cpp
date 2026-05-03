@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "rupture/Logger.h"
+#include "Rupture/Logger.h"
 
 Rupture::LogLevel Rupture::Logger::currentLevel = Rupture::LogLevel::DEBUG;
 

@@ -1,7 +1,7 @@
 
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/catch_approx.hpp>
-#include "rupture/Physics/RigidBody.h"
+#include "Rupture/Physics/RigidBody.h"
 
 const float dt = 1.0f/60.0f;
 

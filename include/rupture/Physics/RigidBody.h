@@ -1,6 +1,6 @@
 #pragma once
 
-#include "rupture/Math/Vec2.h"
+#include "Rupture/Math/Vec2.h"
 
 namespace Rupture {
     class RigidBody {

@@ -1,7 +1,7 @@
 
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/catch_approx.hpp>
-#include "rupture/Math/Vec2.h"
+#include "Rupture/Math/Vec2.h"
 
 TEST_CASE("Vec2 addition"){
     Rupture::Vec2 a(1.0f, 2.0f);

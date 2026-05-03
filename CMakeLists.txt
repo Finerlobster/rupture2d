@@ -17,6 +17,7 @@ FetchContent_MakeAvailable(Catch2)
 add_library(rupture2d
     src/placeholder.cpp
     src/Logger.cpp
+    src/Physics/AABB.cpp
     src/Physics/RigidBody.cpp
 )
 target_include_directories(rupture2d PUBLIC include)
@@ -28,6 +29,7 @@ target_link_libraries(demo PRIVATE rupture2d)
 
 # Tests
 add_executable(tests
+    tests/test_aabb.cpp
     tests/test_vec2.cpp
     tests/test_rigidbody.cpp
 )
