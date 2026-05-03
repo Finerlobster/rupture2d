@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/include/rupture",
+                "${workspaceFolder}/include/Rupture",
                 "${workspaceFolder}/src"
             ],
             "defines": ["RUPTURE_DEBUG"],

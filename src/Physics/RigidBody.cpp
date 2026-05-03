@@ -1,5 +1,5 @@
 
-#include "rupture/Physics/RigidBody.h"
+#include "Rupture/Physics/RigidBody.h"
 
 void Rupture::RigidBody::Integrate(float dt){
     Vec2 acceleration;

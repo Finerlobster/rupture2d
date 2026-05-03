@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "rupture/Logger.h"
+#include "Rupture/Logger.h"
 
 int main() {
     std::cout << "Rupture2D - DEMO: LOGGER" << std::endl;
