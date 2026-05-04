@@ -55,5 +55,12 @@ namespace Rupture {
             if(len == 0.0f) return Vec2(0.0f, 0.0f);
             return Vec2(x / len, y / len);
         }
+
+        Vec2 Rotate(float angle) const {
+            return Vec2(
+                x * cos(angle) - y * sin(angle),
+                x * sin(angle) + y * cos(angle)
+            );
+        }
     };
 }
