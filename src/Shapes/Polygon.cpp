@@ -22,7 +22,7 @@ Rupture::ShapeType Rupture::Polygon::GetShapeType() const {
     return Rupture::ShapeType::POLYGON;
 }
 
-std::vector<Rupture::Vec2> Rupture::Polygon::GetWorldVertices(Rupture::Vec2 position, float angle) const{
+std::vector<Rupture::Vec2> Rupture::Polygon::GetWorldVertices(const Rupture::Vec2 position, float angle) const{
     std::vector<Vec2> worldVertices;
     for(const Vec2& vertex : vertices){
         Vec2 worldVertex = vertex.Rotate(angle) + position;

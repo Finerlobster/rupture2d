@@ -1,12 +1,14 @@
 #pragma once
 
+#include <memory>
 #include "Rupture/Math/Vec2.h"
+#include "Rupture/Shapes/Shape.h"
 
 namespace Rupture {
     class RigidBody {
         public:
         
-        RigidBody(Vec2 position, float mass)
+        RigidBody(Vec2 position, float mass, std::unique_ptr<Shape> shape)
             : position(position)
             , velocity(0.0f, 0.0f)
             , force(0.0f, 0.0f)
@@ -17,6 +19,7 @@ namespace Rupture {
             , torque(0.0f)
             , restitution(0.5f)
             , friction(0.3f)
+            , shape(std::move(shape))
             {}
 
         Vec2 position;
@@ -29,6 +32,7 @@ namespace Rupture {
         float torque;
         float restitution;
         float friction;
+        std::unique_ptr<Shape> shape;
 
         void Integrate(float dt);
         void ApplyForce(Vec2 force);
