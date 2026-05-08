@@ -18,6 +18,7 @@ add_library(rupture2d
     src/placeholder.cpp
     src/Logger.cpp
     src/Physics/AABB.cpp
+    src/Physics/CollisionResolver.cpp
     src/Physics/NarrowPhase.cpp
     src/Physics/RigidBody.cpp
     src/Shapes/Circle.cpp
@@ -33,7 +34,8 @@ target_link_libraries(demo PRIVATE rupture2d)
 # Tests
 add_executable(tests
     #tests/test_aabb.cpp
-    tests/test_narrowphase.cpp
+    "tests/test_collision_resolver.cpp"
+    #tests/test_narrowphase.cpp
     #tests/test_rigidbody.cpp
     #tests/test_shapes.cpp
     #tests/test_vec2.cpp
