@@ -17,6 +17,7 @@ namespace Rupture{
     };
 
     class World{
+        public:
         World(Vec2 gravity) : gravity(gravity){}
         RigidBody& AddBody(Vec2 position, float mass, std::unique_ptr<Shape> shape);
         void RemoveBody(RigidBody& body);
@@ -26,8 +27,8 @@ namespace Rupture{
         private:
         void ApplyGravity();
         void IntegrateBodies(float dt);
-        void BroadPhase();
-        void NarrowPhase();
+        void BroadPhaseStep();
+        void NarrowPhaseStep();
         void ResolveCollisions();
 
         std::vector<std::unique_ptr<RigidBody>> bodies;

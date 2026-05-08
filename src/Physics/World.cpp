@@ -25,7 +25,11 @@ const std::vector<std::unique_ptr<Rupture::RigidBody>>& Rupture::World::GetBodie
 }
 
 void Rupture::World::Step(float dt){
-
+    ApplyGravity();
+    IntegrateBodies(dt);
+    BroadPhaseStep();
+    NarrowPhaseStep();
+    ResolveCollisions();
 }
 
 void Rupture::World::ApplyGravity(){
@@ -41,7 +45,7 @@ void Rupture::World::IntegrateBodies(float dt){
     }
 }
 
-void Rupture::World::BroadPhase(){
+void Rupture::World::BroadPhaseStep(){
     pairs.clear();
     for(int i = 0; i < bodies.size(); i++){
         for(int j = i+1; j < bodies.size(); j++){
@@ -59,10 +63,10 @@ void Rupture::World::BroadPhase(){
     }
 }
 
-void Rupture::World::NarrowPhase(){
+void Rupture::World::NarrowPhaseStep(){
     manifolds.clear();
     for(auto& pair : pairs){
-        CollisionManifold manifold = NarrowPhase::Test(*pair.bodyA, *pair.bodyB);
+        CollisionManifold manifold = Rupture::NarrowPhase::Test(*pair.bodyA, *pair.bodyB);
         if(manifold.hasCollision){
             manifolds.push_back(manifold);
         }
