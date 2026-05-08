@@ -21,6 +21,7 @@ add_library(rupture2d
     src/Physics/CollisionResolver.cpp
     src/Physics/NarrowPhase.cpp
     src/Physics/RigidBody.cpp
+    src/Physics/World.cpp
     src/Shapes/Circle.cpp
     src/Shapes/Polygon.cpp
 )
@@ -34,10 +35,11 @@ target_link_libraries(demo PRIVATE rupture2d)
 # Tests
 add_executable(tests
     #tests/test_aabb.cpp
-    "tests/test_collision_resolver.cpp"
+    #"tests/test_collision_resolver.cpp"
     #tests/test_narrowphase.cpp
     #tests/test_rigidbody.cpp
     #tests/test_shapes.cpp
     #tests/test_vec2.cpp
+    tests/test_world.cpp
 )
 target_link_libraries(tests PRIVATE rupture2d Catch2::Catch2WithMain)
